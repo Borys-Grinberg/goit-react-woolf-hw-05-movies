@@ -1,0 +1,8 @@
+.cast-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cast-list li {
+  margin-bottom: 0.5rem;
+}

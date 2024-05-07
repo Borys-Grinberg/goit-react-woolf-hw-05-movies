@@ -1,0 +1,31 @@
+/* src/components/Movies/Movies.module.css */
+
+.search-link {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+/* src/components/Cast/Cast.module.css */
+
+.cast-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cast-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* src/components/Reviews/Reviews.module.css */
+
+.review-list {
+  list-style: none;
+  padding: 0;
+}
+
+.review-list li {
+  margin-bottom: 1rem;
+}

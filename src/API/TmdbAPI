@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = 'your_api_key_here'; // Ваш API-ключ з themoviedb.org
+const API_KEY = '236da5ba2bdceb8bb441784b05481df2';
 
 const TmdbAPI = {
   getTrendingMovies: async () => {
