@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from '../Home/Home';
-import Movies from '../Movies/Movies';
-import MovieDetails from '../MovieDetails/MovieDetails';
-import Cast from '../Cast/Cast';
-import Reviews from '../Reviews/Reviews';
+import Home from './components/Home/Home';
+import Movies from './components/Movies/Movies';
+import MovieDetails from './components/MovieDetails/MovieDetails';
+import Cast from './components/Cast/Cast';
+import Reviews from './components/Reviews/Reviews';
+
 //import MoviesList from '../MoviesList/MoviesList';
 import NotFound from './NotFound/NotFound';
 
