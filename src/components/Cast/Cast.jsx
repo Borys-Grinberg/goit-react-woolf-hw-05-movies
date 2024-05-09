@@ -1,29 +1,29 @@
-// src/components/Cast/Cast.js
-import React, { useState, useEffect } from 'react';
+import Loader from 'components/Loader/Loader';
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import TmdbAPI from '../../api/ApiTheMovieDB';
+import { getCredits } from 'api/ApiTheMovieDB';
+import ActorList from 'components/ActorList/ActorList';
 
 const Cast = () => {
+  const [credits, setCredits] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
   const { movieId } = useParams();
-  const [cast, setCast] = useState([]);
 
   useEffect(() => {
-    const fetchMovieCast = async () => {
-      const castData = await TmdbAPI.getMovieCredits(movieId);
-      setCast(castData);
-    };
-
-    fetchMovieCast();
+    setLoading(true);
+    getCredits(movieId)
+      .then(setCredits)
+      .catch(error => setErrorMessage(error.message))
+      .finally(setLoading(false));
   }, [movieId]);
 
   return (
     <div>
-      <h2>Cast</h2>
-      <ul>
-        {cast.map(actor => (
-          <li key={actor.id}>{actor.name}</li>
-        ))}
-      </ul>
+      {loading && <Loader />}
+      {errorMessage && <ErrorMessage message={errorMessage} />}
+      {credits && <ActorList actors={credits.cast} />}
     </div>
   );
 };
