@@ -1,36 +1,29 @@
-// src/components/Reviews/Reviews.js
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import TmdbAPI from '../TmdbAPI';
+import { getReviews } from 'api/ApiTheMovieDB';
+import Loader from 'components/Loader/Loader';
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+import ReviewList from 'components/ReviewList/ReviewList';
 
 const Reviews = () => {
+  const [reviews, setReviews] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
   const { movieId } = useParams();
-  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    const fetchMovieReviews = async () => {
-      const reviewsData = await TmdbAPI.getMovieReviews(movieId);
-      setReviews(reviewsData);
-    };
-
-    fetchMovieReviews();
+    setLoading(true);
+    getReviews(movieId)
+      .then(setReviews)
+      .catch(error => setErrorMessage(error.message))
+      .finally(setLoading(false));
   }, [movieId]);
 
   return (
     <div>
-      <h2>Reviews</h2>
-      {reviews.length > 0 ? (
-        <ul>
-          {reviews.map(review => (
-            <li key={review.id}>
-              <p>Author: {review.author}</p>
-              <p>{review.content}</p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>We don't have any reviews for this movie.</p>
-      )}
+      {loading && <Loader />}
+      {errorMessage && <ErrorMessage message={errorMessage} />}
+      {reviews !== null ? <ReviewList reviews={reviews} /> : <></>}
     </div>
   );
 };

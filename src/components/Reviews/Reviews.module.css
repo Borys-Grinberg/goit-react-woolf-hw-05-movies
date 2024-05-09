@@ -1,19 +1,6 @@
-/* reviews.module.css */
-
-.review-list {
-  list-style: none;
-  padding: 0;
-}
-
-.review-list li {
-  margin-bottom: 1rem;
-}
-
-.review-author {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.review-content {
-  margin-bottom: 0.5rem;
+.container {
+  height: '100vh';
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
 }
