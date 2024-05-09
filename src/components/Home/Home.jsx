@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MoviesList from '../MoviesList/MoviesList'; // Додали імпорт MoviesList
-import TmdbAPI from '../../API/TmdbAPI';
+import TmdbAPI from '../../api/ApiTheMovieDB';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);

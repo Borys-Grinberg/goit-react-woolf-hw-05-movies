@@ -1,7 +1,7 @@
 // src/components/Cast/Cast.js
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import TmdbAPI from '../../API/TmdbAPI';
+import TmdbAPI from '../../api/ApiTheMovieDB';
 
 const Cast = () => {
   const { movieId } = useParams();
