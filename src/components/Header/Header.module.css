@@ -5,7 +5,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 16px 32px;
-  background-color: #7efff2;
+  background-color: #7ea3ff;
   border-bottom: 1px solid #1fb9aa;
   box-shadow: 1px 1px 4px #0d423d;
   font-size: 24px;
@@ -21,6 +21,6 @@
 
 a.active {
   color: azure;
-  background-color: teal;
-  border: 1px solid teal;
+  background-color: blue;
+  border: 1px solid violet;
 }

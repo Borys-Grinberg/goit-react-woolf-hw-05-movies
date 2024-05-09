@@ -8,13 +8,13 @@
 }
 
 .btn {
-  border: 2px solid teal;
-  background-color: teal;
+  border: 2px solid blue;
+  background-color: blue;
   color: azure;
   border-radius: 4px;
   padding: 4px 16px;
 }
 
 .btn:active {
-  border: 2px solid #056767;
+  border: 2px solid #053367;
 }

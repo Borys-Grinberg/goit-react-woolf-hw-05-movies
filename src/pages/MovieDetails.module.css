@@ -15,8 +15,8 @@
 }
 
 .btn {
-  border: 1px solid teal;
-  background-color: cadetblue;
+  border: 1px solid blue;
+  background-color: lightskyblue;
   padding: 2px 32px;
-  border-radius: 50% 2px 2px 50%;
+  border-radius: 5px;
 }
