@@ -1,11 +1,25 @@
-/* src/components/MoviesList/MoviesList.module.css */
-.movies-list {
-  list-style-type: none;
-  padding: 0;
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 32px;
 }
 
-.movies-list-item {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
+.container {
+  background-color: azure;
+}
+
+.item {
+  cursor: pointer;
+  padding: 2px 8px;
+  border: 1px solid transparent;
+}
+
+.item:hover,
+.item:focus {
+  box-shadow: 1px 1px 3px 1px #7a7a7a;
+}
+
+.item:active {
+  border: 1px solid #7a7a7a;
 }
